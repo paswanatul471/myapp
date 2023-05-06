@@ -1,9 +1,15 @@
 import React from 'react'
-
+import { useState } from 'react'
 const App = () => {
+  const [count,setcount] = useState(0)
+
+
   return (
-    <div>App</div>
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={()=>setcount(count + 1)}>Click me</button>
+    </div>
   )
 }
 
-export default App
+export default App;
