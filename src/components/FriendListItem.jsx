@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './components/FriendListItem'
 
-function App(props) {
+function FriendListItem(props) {
   const [isOnline, setIsOnline] = useState(null);
   useEffect(() => {
     function handleStatusChange(status) {
@@ -13,9 +12,9 @@ function App(props) {
     };
   });
 
-  if (isOnline === null) {
-    return 'Loading...';
-  }
-  return isOnline ? 'Online' : 'Offline';
+  return (
+    <li style={{ color: isOnline ? 'green' : 'black' }}>
+      {props.friend.name}
+    </li>
+  );
 }
-export default App;
