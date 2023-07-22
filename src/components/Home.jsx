@@ -1,21 +1,18 @@
-import React,{useState} from 'react'
+import React from 'react'
+import jsonData from "../assets/data.json"
 
-function Home() {
-    const [a, setA] = useState(0);
-    const Increment =()=>{
-        setA(a+1);
-    }
-    const Decrement =()=>{
-        setA(a-1);
-    }
-    
+const Home=()=> {
   return (
     <div>
-        <button onClick={Increment}>Add</button>
-        <p>{a}</p>
-        <button onClick={Decrement}>Minus</button>
+      {jsonData.map((item, index) => (
+        <div key={index}>
+          <h1>Name:{item.name}</h1>
+          <p>Age: {item.age}</p>
+         
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
 export default Home
